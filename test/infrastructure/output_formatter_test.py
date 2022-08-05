@@ -1,6 +1,6 @@
 import unittest
 
-from src.output_formatter import format_output
+from src.infrastructure.output_formatter import format_output
 
 
 class OutputFormatterTest(unittest.TestCase):

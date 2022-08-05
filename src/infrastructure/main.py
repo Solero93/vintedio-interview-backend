@@ -1,5 +1,5 @@
-from src.list_packages import list_packages
-from src.output_formatter import format_output
+from src.application.list_packages import list_packages
+from src.infrastructure.output_formatter import format_output
 
 
 def main():
