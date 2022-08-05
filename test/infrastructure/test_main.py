@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch
 
-from src.infrastructure.main import main
+from src.main import main
 
 
 class MainTest(unittest.TestCase):
