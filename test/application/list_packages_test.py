@@ -10,7 +10,7 @@ class ListPackagesTest(unittest.TestCase):
         list_packages = ListPackages(package_repository=mock_package_repository)
         expected = []
         actual = list_packages.invoke()
-        self.assertListEqual([], actual)
+        self.assertListEqual(expected, actual)
 
 
 if __name__ == '__main__':
