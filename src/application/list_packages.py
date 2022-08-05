@@ -5,7 +5,7 @@ from src.infrastructure.packages_from_file import PackagesFromFile
 
 
 class ListPackages:
-    def __init__(self, package_repository: PackageRepository = PackagesFromFile()):
+    def __init__(self, package_repository: PackageRepository = PackagesFromFile("db.txt")):
         self.package_repository = package_repository
 
     def invoke(self) -> List[str]:
