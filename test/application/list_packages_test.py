@@ -1,15 +1,16 @@
 import unittest
-from unittest.mock import patch
 
-from src.application.list_packages import list_packages
+from src.application.list_packages import ListPackages
+from test.mock.packages_from_static_data import PackagesFromStaticData
 
 
 class ListPackagesTest(unittest.TestCase):
-    @patch("src.application.list_packages.get_packages")
-    def test_should_list_empty_when_no_packages(self, mock_get_packages):
-        mock_get_packages.return_value = []
-        all_packages = list_packages()
-        self.assertListEqual([], all_packages)  # add assertion here
+    def test_should_list_empty_when_no_packages(self):
+        mock_package_repository = PackagesFromStaticData([])
+        list_packages = ListPackages(package_repository=mock_package_repository)
+        expected = []
+        actual = list_packages.invoke()
+        self.assertListEqual([], actual)
 
 
 if __name__ == '__main__':

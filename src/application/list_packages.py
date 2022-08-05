@@ -1,10 +1,12 @@
 from typing import List
 
-
-def list_packages() -> List[str]:
-    packages = get_packages()
-    return packages
+from src.domain.package_repository import PackageRepository
+from src.infrastructure.packages_from_file import PackagesFromFile
 
 
-def get_packages() -> List[str]:
-    return []
+class ListPackages:
+    def __init__(self, package_repository: PackageRepository = PackagesFromFile()):
+        self.package_repository = package_repository
+
+    def invoke(self) -> List[str]:
+        return self.package_repository.get_packages()
