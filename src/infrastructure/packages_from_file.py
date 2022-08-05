@@ -6,4 +6,5 @@ class PackagesFromFile(PackageRepository):
         self.file_path = file_path
 
     def get_packages(self):
-        return []
+        with open(self.file_path, "r") as database_file:
+            return [package.rstrip("\n") for package in database_file.readlines()]
